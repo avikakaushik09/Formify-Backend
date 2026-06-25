@@ -31,7 +31,7 @@ export default function Dashboard() {
   const fetchForms = async (token) => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/forms/my-forms",
+        "https://formify-backend-zkl2.onrender.com/api/forms/my-forms",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ export default function Dashboard() {
       for (const form of res.data) {
         try {
           const responseRes = await axios.get(
-            `http://localhost:5000/api/responses/${form._id}`
+            `https://formify-backend-zkl2.onrender.com/api/responses/${form._id}`
           );
 
           total += responseRes.data.length;
